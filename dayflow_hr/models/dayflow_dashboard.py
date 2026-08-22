@@ -27,4 +27,4 @@ class DayflowDashboard(models.Model):
             record.approved_leaves = self.env['hr.leave'].search_count([
                 ('employee_id', '=', record.employee_id.id),
                 ('state', '=', 'validate')
-            ])ss
+            ])
