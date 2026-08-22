@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="view_dayflow_dashboard_tree" model="ir.ui.view">
+        <field name="name">dayflow.dashboard.tree</field>
+        <field name="model">dayflow.dashboard</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="employee_count"/>
+                <field name="present_count"/>
+                <field name="absent_count"/>
+                <field name="leave_count"/>
+            </list>
+        </field>
+    </record>
+
+
+    <record id="view_dayflow_dashboard_form" model="ir.ui.view">
+        <field name="name">dayflow.dashboard.form</field>
+        <field name="model">dayflow.dashboard</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+
+                    <group>
+                        <group>
+                            <field name="employee_count"/>
+                            <field name="present_count"/>
+                        </group>
+
+                        <group>
+                            <field name="absent_count"/>
+                            <field name="leave_count"/>
+                        </group>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_dayflow_dashboard" model="ir.actions.act_window">
+        <field name="name">Dayflow Dashboard</field>
+        <field name="res_model">dayflow.dashboard</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+
+    <menuitem
+        id="menu_dayflow_root"
+        name="Dayflow HRMS"
+        sequence="10"/>
+
+    <menuitem
+        id="menu_dayflow_dashboard"
+        name="Dashboard"
+        parent="menu_dayflow_root"
+        action="action_dayflow_dashboard"
+        sequence="10"/>
+
+</odoo>
