@@ -7,6 +7,7 @@
     'data': [
         'security/ir.model.access.csv',
         'views/dayflow_dashboard_views.xml',
+        'data/demo_data.xml',
     ],
     'installable': True,
     'application': True,
